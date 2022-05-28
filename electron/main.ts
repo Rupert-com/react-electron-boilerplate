@@ -12,7 +12,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
-    // autoHideMenuBar: true,
+    autoHideMenuBar: isDev ? false : true,
   })
 
   if (isDev) win.loadURL('http://localhost:3000/index.html')
