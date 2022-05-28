@@ -11,19 +11,16 @@ function createWindow() {
         height: 600,
         webPreferences: {
             nodeIntegration: true
-        }
+        },
+        autoHideMenuBar: true
     });
-    if (isDev) {
+    if (isDev)
         win.loadURL('http://localhost:3000/index.html');
-    }
-    else {
-        // 'build/index.html'
+    else
         win.loadURL("file://" + __dirname + "/../index.html");
-    }
-    win.on('closed', function () { return win = null; });
+    win.on('closed', function () { return (win = null); });
     // Hot Reloading
     if (isDev) {
-        // 'node_modules/.bin/electronPath'
         require('electron-reload')(__dirname, {
             electron: path.join(__dirname, '..', '..', 'node_modules', '.bin', 'electron'),
             forceHardReset: true,
