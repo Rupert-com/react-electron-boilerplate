@@ -11,8 +11,7 @@ function createWindow() {
         height: 600,
         webPreferences: {
             nodeIntegration: true
-        },
-        autoHideMenuBar: true
+        }
     });
     if (isDev)
         win.loadURL('http://localhost:3000/index.html');
